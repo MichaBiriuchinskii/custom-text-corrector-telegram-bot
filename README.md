@@ -1,17 +1,20 @@
 # Custom Text Corrector Telegram Bot
 
-A personal Telegram bot that provides tailored grammar and style corrections using free LLM APIs from OpenRouter. This bot solves the frustration of using ChatGPT or other tools where you have to explain prompts and ask specifically not to fix too much while still getting meaningful corrections.
+Tired of opening ChatGPT, Gemini, or other LLM apps just to fix a sentence? This personal Telegram bot makes tailored grammar and style corrections just a message away — directly from your favorite messaging app.
 
-## 🎯 Why This Bot?
 
-Traditional correction tools often over-correct or don't understand your specific needs. This solution gives you:
-- Tailored corrections based on your preferences
-- Multiple correction modes (full, grammar-only, style-only)
-- Custom tone adjustments
-- Multi-language support
-- No need to explain prompts each time
+## Why This Bot?
 
-## ✨ Features
+Most tools rewrite too much or miss your tone. This bot gives fast, personal corrections — right in Telegram.
+
+- 🧠 Remembers your style and preferences
+- 🎛️ Choose: full, grammar-only, or style-only
+- 🎯 Set your tone once — formal, casual, etc.
+- 🌍 Works in multiple languages
+- 🚫 No need to explain prompts each time
+
+
+## Features
 
 - **Smart Grammar Correction**: Fix grammar and spelling while preserving your style
 - **Tone Adjustment**: Choose from preset tones (casual, formal, polite, academic) or create custom ones
@@ -62,22 +65,6 @@ Traditional correction tools often over-correct or don't understand your specifi
    HTTP_REFERER=your_app_name
    X_TITLE=your_app_name
    LOG_FILE_PATH=telegram_custom_corrector.log
-   ```
-
-   Create a `config.py` file to load these variables:
-   ```python
-   import os
-   from dotenv import load_dotenv
-   
-   load_dotenv()
-   
-   TELEGRAM_TOKEN = os.getenv('TELEGRAM_TOKEN')
-   OPENROUTER_API_KEY = os.getenv('OPENROUTER_API_KEY')
-   OPENROUTER_MODEL_NAME = os.getenv('OPENROUTER_MODEL_NAME')
-   API_BASE_URL = os.getenv('API_BASE_URL')
-   HTTP_REFERER = os.getenv('HTTP_REFERER')
-   X_TITLE = os.getenv('X_TITLE')
-   LOG_FILE_PATH = os.getenv('LOG_FILE_PATH')
    ```
 
 ### Running the Bot
@@ -134,41 +121,6 @@ tail -f telegram_custom_corrector.log
 - `/mode` - Select correction mode
 - `/settings` - View current preferences
 
-### Correction Modes
-
-1. **Full Correction** (default)
-   - Fixes grammar and spelling
-   - Adjusts tone and style
-   - Most comprehensive option
-
-2. **Grammar Only**
-   - Only fixes grammar and spelling errors
-   - Preserves original tone and style
-   - Perfect for maintaining your voice
-
-3. **Style Only**
-   - Adjusts tone without fixing grammar
-   - Useful for changing formality level
-   - Keeps original errors intact
-
-### Tone Presets
-
-- **Casual**: Conversational and relaxed
-- **Formal**: Business-like and professional
-- **Polite**: Respectful and courteous
-- **Academic**: Scholarly and intellectual
-- **Custom**: Define your own tone
-
-### Example Usage
-
-Simply send any message to the bot:
-
-**Input:** "Эмм я честно не знаю что ты хотел в претпоследгнем сообщении сказать"
-**Output:** "Эм, я, если честно, не знаю, что ты хотел в предпоследнем сообщении сказать"
-
-**Input:** "I has a apple"
-**Output:** "I have an apple"
-
 ## 🛠️ Technical Details
 
 ### Architecture
@@ -187,40 +139,8 @@ Simply send any message to the bot:
 ### Logging
 
 All activity is logged to `telegram_custom_corrector.log` including:
-- User interactions
-- LLM requests and responses
 - Errors and exceptions
 - Bot startup and shutdown
-
-### File Structure
-
-```
-custom-text-corrector-telegram-bot/
-├── bot.py                 # Main bot application
-├── config.py             # Configuration loader
-├── .env                  # Environment variables
-├── requirements.txt      # Python dependencies
-├── telegram_custom_corrector.log  # Log file
-└── README.md            # This file
-```
-
-## 🔍 Troubleshooting
-
-### Common Issues
-
-1. **Bot not responding**
-   - Check if the process is running: `ps aux | grep bot.py`
-   - Check logs: `tail -f telegram_custom_corrector.log`
-   - Verify API keys in `.env` file
-
-2. **API errors**
-   - Verify OpenRouter API key
-   - Check if model name is correct
-   - Ensure you have API credits
-
-3. **Permission errors**
-   - Make sure the bot has write permissions for log files
-   - Check if virtual environment is activated
 
 ### Log Analysis
 
