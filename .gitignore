@@ -2,3 +2,48 @@
 .DS_Store
 .AppleDouble
 .LSOverride
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*build*/
+*develop-eggs*/
+*dist*/
+*downloads*/
+*eggs*/
+*.eggs/
+*lib*/
+*lib64*/
+*parts*/
+*sdist*/
+*var*/
+*wheels*/
+*share/python-wheels/
+*.egg-info/
+htmlcov/
+.installed.cfg
+*.manifest
+*.spec
+pip-log.txt
+pip-delete-this-directory.txt
+pip-selfcheck.json
+# Virtual environment
+venv/
+.venv/
+ENV/
+env/
+# Sensitive files
+.env  <--- THIS IS VERY IMPORTANT
+*.env
+config.py # If you store keys directly here and not just load from .env
+          # It's better practice to load from .env in config.py and
+          # NOT commit config.py if it could somehow contain fallback keys.
+          # However, your current config.py loads from .env, so it's usually fine to commit config.py itself.
+          # The main thing is that the .env file itself is ignored.
+
+# IDE / Editor specific
+.vscode/
+.idea/
+*.swp
+*.swo
