@@ -47,3 +47,5 @@ config.py # If you store keys directly here and not just load from .env
 .idea/
 *.swp
 *.swo
+telegram_custom_corrector.log
+users_data.json
